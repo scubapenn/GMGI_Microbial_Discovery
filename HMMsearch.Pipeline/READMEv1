@@ -1,20 +1,131 @@
-#These are the steps to run Hmmsearch in a folder for example in P10-A
-#This generates the configs
+markdown
+Copy code
+# HMMsearch Pipeline Guide
+
+This section outlines the steps to run `hmmsearch` in a project folder (e.g., `P10-A`) using the provided pipeline scripts.
+
+## Pipeline Overview
+
+### Step 1: Generate Configurations
+First, generate the necessary configuration files for your project.
+
+```bash
 /work/gmgiMD/code/HMMsearch.Pipeline.dir/generate.configs.v2.sh P10-A
-#must copy the below files and directory into the P10 directory
+Step 2: Copy Required Files
+Copy the required scripts and directories into the project folder (P10-A in this case).
+
+bash
+Copy code
 cp /work/gmgiMD/code/HMMsearch.Pipeline.dir/run_* .
 cp -r /work/gmgiMD/code/HMMsearch.Pipeline.dir/project_files/ .
+Step 3: Run the Split Fasta Script
+Execute the script that splits the FASTA files. Let this finish before proceeding to the next step.
 
-#Run this and let it finish before running the next thing
+bash
+Copy code
 ./run_split_fasta.v2.sh P10-A
+Step 4: Verify Split Fasta Files
+Check if the split FASTA files were generated successfully.
 
-#Check to see that the fast files were generated
+bash
+Copy code
 ls searches/split_fasta/split_fasta_Nvir-*
+You can also check the job status to ensure that the splitting process has finished.
 
+bash
+Copy code
 squeue -u k.penn
 ls searches/split_fasta/split_fasta_Nvir-*
+Step 5: Run the HMMsearch
+Once the FASTA files are split, run the hmmsearch with the following command:
 
-#This runs the final Hmmsearch
+bash
+Copy code
 ./run_hmmscan.v3.sh P10-A
+Step 6: Final Check
+Verify that the search results are available:
+
+bash
+Copy code
+ls searches/split_fasta/split_fasta_Nvir-*
+Make sure that all steps are completed successfully before proceeding with further analyses.
+
+css
+Copy code
+
+This version organizes the instructions into clear steps, making it easier to follow and understand. It also uses consistent formatting to distinguish commands from explanations.
+
+
+
+
+
+You said:
+That needs to be in one block so I can copy it to github
+ChatGPT said:
+ChatGPT
+Here is the revised version in a single block for easy copying to GitHub:
+
+markdown
+Copy code
+# HMMsearch Pipeline Guide
+
+This section outlines the steps to run `hmmsearch` in a project folder (e.g., `P10-A`) using the provided pipeline scripts.
+
+## Pipeline Overview
+
+### Step 1: Generate Configurations
+First, generate the necessary configuration files for your project.
+
+/work/gmgiMD/code/HMMsearch.Pipeline.dir/generate.configs.v2.sh P10-A
+
+csharp
+Copy code
+
+### Step 2: Copy Required Files
+Copy the required scripts and directories into the project folder (`P10-A` in this case).
+
+cp /work/gmgiMD/code/HMMsearch.Pipeline.dir/run_* . cp -r /work/gmgiMD/code/HMMsearch.Pipeline.dir/project_files/ .
+
+vbnet
+Copy code
+
+### Step 3: Run the Split Fasta Script
+Execute the script that splits the FASTA files. Let this finish before proceeding to the next step.
+
+./run_split_fasta.v2.sh P10-A
+
+bash
+Copy code
+
+### Step 4: Verify Split Fasta Files
+Check if the split FASTA files were generated successfully.
 
 ls searches/split_fasta/split_fasta_Nvir-*
+
+arduino
+Copy code
+
+You can also check the job status to ensure that the splitting process has finished.
+
+squeue -u k.penn ls searches/split_fasta/split_fasta_Nvir-*
+
+bash
+Copy code
+
+### Step 5: Run the HMMsearch
+Once the FASTA files are split, run the `hmmsearch` with the following command:
+
+./run_hmmscan.v3.sh P10-A
+
+sql
+Copy code
+
+### Step 6: Final Check
+Verify that the search results are available:
+
+ls searches/split_fasta/split_fasta_Nvir-*
+
+sql
+Copy code
+
+Make sure that all steps are completed successfully before proceeding with further analyses.
