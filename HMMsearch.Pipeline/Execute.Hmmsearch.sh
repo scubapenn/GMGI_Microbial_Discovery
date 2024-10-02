@@ -1,0 +1,20 @@
+#These are the steps to run Hmmsearch in a folder for example in P13-A
+#This generates the configs
+/work/gmgiMD/code/HMMsearch.Pipeline.dir/generate.configs.v2.sh P13-A
+#must copy the below files and directory into the P10 directory 
+cp /work/gmgiMD/code/HMMsearch.Pipeline.dir/run_* .
+cp -r /work/gmgiMD/code/HMMsearch.Pipeline.dir/project_files/ .
+
+#Run this and let it finish before running the next thing
+./run_split_fasta.v2.sh P13-A
+
+#Check to see that the fast files were generated
+#ls searches/split_fasta/split_fasta_Nvir-*
+
+#squeue -u k.penn
+#ls searches/split_fasta/split_fasta_Nvir-*
+
+#This runs the final Hmmsearch
+#./run_hmmscan.v3.sh P13-A
+ 
+#ls searches/split_fasta/split_fasta_Nvir-*

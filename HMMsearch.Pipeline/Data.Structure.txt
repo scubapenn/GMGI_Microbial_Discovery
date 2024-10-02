@@ -1,0 +1,9 @@
+/work/gmgiMD/code/HMMsearch.Pipeline.dir/
+├── project_files/
+│   ├── Make.Slurm.directories.sh
+│   ├── SBATCH.HMMSCAN.v2.sh
+│   ├── SBATCH.split.fasta.py
+│   └── split.fasta.py
+├── run_hmmscan.v3.sh
+├── run_split_fasta.v2.sh
+└── generate.configs.v2.sh
